@@ -18,7 +18,6 @@ class ViewController: UIViewController {
     @IBOutlet var addPerson: UIStepper!
     @IBOutlet var personAmount: UILabel!
     @IBOutlet var calculate: UIButton!
-    @IBOutlet var Total: UILabel!
     @IBOutlet var amountPerPerson: UILabel!
     
     @IBOutlet var totall: UILabel!
@@ -50,8 +49,21 @@ class ViewController: UIViewController {
     
     @IBAction func addPeople(_ sender: Any) {
         personAmount.text = String(Int(addPerson.value))
+        var app = personAmount
     }
     
-    
+    @IBAction func CalculateB(_ sender: Any) {
+        
+        performSegue(withIdentifier: "calculate", sender: billPlusTip)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let bill = segue.destination as? Calculater
+        {
+            if let total = sender as? Double
+            {
+                bill.total = total
+            }
+        }
+    }
 }
 

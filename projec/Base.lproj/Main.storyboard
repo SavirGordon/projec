@@ -39,7 +39,6 @@
                                     <segment title="20%"/>
                                 </segments>
                                 <connections>
-                                    <action selector="tipAmount:" destination="BYZ-38-t0r" eventType="valueChanged" id="4h8-GQ-eGe"/>
                                     <action selector="tipPercentage:" destination="BYZ-38-t0r" eventType="valueChanged" id="Xy3-b9-LQa"/>
                                 </connections>
                             </segmentedControl>
@@ -85,6 +84,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Calculate"/>
+                                <connections>
+                                    <action selector="CalculateB:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DCl-Xw-g7l"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -96,17 +98,17 @@
                         <outlet property="calculate" destination="y4U-bx-uUb" id="XDR-Z7-ekd"/>
                         <outlet property="personAmount" destination="mTe-qJ-6Yt" id="qAe-Cs-hXq"/>
                         <outlet property="tipAmount" destination="IKx-3a-ZDq" id="Pfi-dH-WxV"/>
-                        <segue destination="72c-Ju-ojw" kind="show" id="Hp8-QU-GEA"/>
+                        <segue destination="72c-Ju-ojw" kind="show" identifier="calculate" id="U0x-aH-8d0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="78.625954198473281" y="3.5211267605633805"/>
         </scene>
-        <!--View Controller-->
+        <!--Calculater-->
         <scene sceneID="DsR-9a-yQE">
             <objects>
-                <viewController id="72c-Ju-ojw" customClass="ViewController" customModule="projec" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="72c-Ju-ojw" customClass="Calculater" customModule="projec" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2kw-0w-lkM">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -145,10 +147,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="3tg-sO-fhQ"/>
                     <connections>
-                        <outlet property="Total" destination="GWR-by-8Us" id="g9S-LV-xjZ"/>
-                        <outlet property="amountPerPerson" destination="hmG-KQ-aAr" id="QQT-tC-Ufc"/>
-                        <outlet property="amountpp" destination="zZP-QQ-V8K" id="4xi-D1-Vai"/>
-                        <outlet property="totall" destination="EgA-iW-wKl" id="3VO-AZ-8jg"/>
+                        <outlet property="tottal" destination="EgA-iW-wKl" id="pbY-DP-WAN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NMj-X4-7bN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
