@@ -9,8 +9,7 @@ import UIKit
 
 class Calculater: UIViewController {
     
-    var total = 0.0
-
+    var total:[Double]!
   
     
     @IBOutlet var tottal: UILabel!
@@ -18,13 +17,11 @@ class Calculater: UIViewController {
     @IBOutlet var amounpp: UILabel!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tottal.text = String(total)
-        // Do any additional setup after loading the view.
-        amountpp = String()
+        tottal.text = String(total[0])
+        amounpp.text = String(total[1])
     }
     /*
     // MARK: - Navigation

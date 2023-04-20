@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    var arr:[Double] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     var app = 0.0
     
     var billPlusTip = 0.0
-    var peeps = 0
+    var peeps = 0.0
     @IBAction func billCost(_ sender: Any) {
     }
     @IBAction func tipPercentage(_ sender: Any) {
@@ -45,21 +45,27 @@ class ViewController: UIViewController {
             tipAm = (Double(billAmount.text!) ?? 0) * 0.20
             billPlusTip = (Double(billAmount.text!) ?? 0) + tipAm
         }
+        
     }
     
     @IBAction func addPeople(_ sender: Any) {
         personAmount.text = String(Int(addPerson.value))
         var app = personAmount
+        
+        
+         peeps = billPlusTip / addPerson.value
+        
     }
     
     @IBAction func CalculateB(_ sender: Any) {
-        
-        performSegue(withIdentifier: "calculate", sender: billPlusTip)
+        arr = [billPlusTip, peeps]
+
+        performSegue(withIdentifier: "calculate", sender: arr)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let bill = segue.destination as? Calculater
         {
-            if let total = sender as? Double
+            if let total = sender as? [Double]
             {
                 bill.total = total
             }
